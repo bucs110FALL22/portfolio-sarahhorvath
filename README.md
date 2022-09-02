@@ -14,5 +14,5 @@ Preferred Name: Sarah
 
 Discord username: Sarah Horvath#8142
 
-REPL url: https://replit.com/@shorvat1
+REPL url: [https://replit.com/@shorvat1](https://replit.com/join/itzbvfvyzq-shorvat1)
 
