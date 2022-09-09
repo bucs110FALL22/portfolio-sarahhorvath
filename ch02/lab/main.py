@@ -18,3 +18,5 @@ print(cost_per_class, type(cost_per_class))
 print("Cost per week: $", cost_per_week)
 print ("Cost per class: $", cost_per_class)
 #Part B
+my_list = ["computer", "science", 41, 5.6, 2022, "cs110", 9.3 ]
+print (random.choice(my_list))
