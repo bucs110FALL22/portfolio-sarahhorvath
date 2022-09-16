@@ -63,9 +63,14 @@ for _ in range(m):
   x2 = side_length * math.cos(theta) + offset  
   y2 = side_length * math.sin(theta) + offset
   print (x2,y2)
+  coords.append ((x2,y2))
+  print (coords)
 
-pygame.draw.polygon(screen, color,((10,20),(90,20),(50,80)))
+#pygame.draw.polygon(screen, color,((10,20),(90,20),(50,80)))
+pygame.draw.polygon(screen, color,coords)
 pygame.display.flip()
+
+pygame.time.wait(10000)
 
 #equilateral triangle
 #square (4 sides)
