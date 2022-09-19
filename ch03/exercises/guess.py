@@ -4,7 +4,7 @@ my_list = range(1, 11, 1)
 print(list(my_list))
 
 randomNumber = random.choice(my_list)
-print(randomNumber)
+#print(randomNumber)
 num_guesses = 0
 correctGuess = False 
 #print ("You have three guesses to guess the number between 1-10, inclusive. What is the number?")
