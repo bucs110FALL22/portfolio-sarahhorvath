@@ -5,18 +5,25 @@ print(list(my_list))
 
 randomNumber = random.choice(my_list)
 print(randomNumber)
+num_guesses = 0
+correctGuess = False 
 #print ("You have three guesses to guess the number between 1-10, inclusive. What is the number?")
 
 n = 3
-for _ in range(n):
+for i in range(n):
+  if not correctGuess:
     print("What is the number?")
     numberGuessed = int(input())
-    if numberGuessed == randomNumber:
-        print("correct")
+    num_guesses = num_guesses +1
+    if numberGuessed < randomNumber:
+        print("Too Low")
     elif numberGuessed > randomNumber:
         print("Too High")
     else:
-        print("Too Low")
+        print("correct!")
+        correctGuess = True
+        print ("Took you", num_guesses, "guesses to get it right.")
+     
 
 #Using nested if statements and a loop, give the user 3 chances to guess the number.
 #If the guess is too low, print the message “Too Low”
