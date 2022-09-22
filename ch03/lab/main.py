@@ -52,25 +52,29 @@ screen.fill((255,255,255))
 color = (0,255,0)
 
 coords = []
-num_sides = 3
+num_sides = 4
 side_length = 20
 offset = 100
-
-m = 3
+m = num_sides
 for _ in range(m):
   theta = (2.0* math.pi * m) / (num_sides)
   print (theta)
   x2 = side_length * math.cos(theta) + offset  
   y2 = side_length * math.sin(theta) + offset
-  print (x2,y2)
+  #print (x2,y2)
   coords.append ((x2,y2))
   print (coords)
 
 #pygame.draw.polygon(screen, color,((10,20),(90,20),(50,80)))
-pygame.draw.polygon(screen, color,coords)
+pygame.draw.polygon(screen, color, coords)
 pygame.display.flip()
+pygame.time.wait(1000)
+#screen.fill((255,255,255))
+#color = "blue"
+#pygame.draw.polygon(screen, color,((40,20),(90,20),(50,80), (40,40)))
+#pygame.display.flip()
+#pygame.time.wait(1000)
 
-pygame.time.wait(10000)
 
 #equilateral triangle
 #square (4 sides)
