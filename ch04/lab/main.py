@@ -35,22 +35,25 @@ pygame.display.flip()
 
 
 
-n = 1
+n = 10
 for _ in range(n):
   valueX = random.randrange(0, screen_width, 1)
   valueY = random.randrange(0, screen_height, 1)
   pygame.draw.circle(screen,'black',(valueX,valueY), 7)
   pygame.display.flip()
-  distance_from_center = math.hypot(x-valueX, y-valueY) #the distance formula
-  if distance_from_center <= screen_width/2:
-    print("in the circle")
+  distance_from_center = math.hypot(x/2-valueX, y/2-valueY) #the distance formula
+  if distance_from_center <= ((screen_width)/2):
+      pygame.draw.circle(screen,'green',(valueX,valueY), 7)
+      pygame.display.flip()
+
+
 
 
 
 
 
     
-pygame.time.wait(10000)
+pygame.time.wait(1000)
 
 #rect(window, 'blue',[(x,y),])
 
