@@ -1,6 +1,7 @@
 import pygame
 pygame.init()
 window = pygame.display.set_mode()
+#set_mode(size=(400, 400)
 pygame.display.get_window_size() 
 
 
@@ -20,11 +21,12 @@ pygame.display.flip()
 
 pygame.draw.circle(window,'pink',(x/2,y/2), x/2)
 pygame.display.flip()
-pygame.draw.line(window,'black',(x/2,0),(y,x/2), width=2)
-pygame.draw.line(window,'black',(0,y/2),(y,y/2), width=2)
+pygame.draw.line(window,'black',(x/2,0),(x/2,y), width=2)
+pygame.display.flip()
+pygame.draw.line(window,'black',(0,y/2),(x,y/2), width=2)
 pygame.display.flip()
 
-pygame.time.wait(100000)
+pygame.time.wait(10000)
 
 #rect(window, 'blue',[(x,y),])
 
