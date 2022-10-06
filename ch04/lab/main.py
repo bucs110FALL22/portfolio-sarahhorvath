@@ -2,25 +2,17 @@ import pygame
 import random
 import math
 pygame.init()
-#window = pygame.display.set_mode()
-#set_mode(size=(400, 400)
-#pygame.display.get_window_size() 
+
 screen_width=380
 screen_height=380
 screen=pygame.display.set_mode([screen_width, screen_height])
 
-
-#WindowSize = [pygame.display.get_window_size()[0], pygame.display.get_window_size()[1]]
-#print (WindowSize)
 screen.fill((255,255,255))
 pygame.display.flip()
 
 x=screen_width
 y=screen_height
-#x = pygame.display.get_window_size()[0]
-#print(x)
-#y = pygame.display.get_window_size()[1]
-#print(y)
+
 color = (40,98,233)
 
 pygame.draw.rect(screen,color,(0,0,x,y))
@@ -46,14 +38,32 @@ for _ in range(n):
       pygame.draw.circle(screen,'green',(valueX,valueY), 7)
       pygame.display.flip()
 
+redX = 350
+redY = 10
+redSize = 30
+pygame.draw.rect(screen,"red",(redX,redY,redSize,redSize))
+pygame.display.flip()
+blueX = 350
+blueY = 350
+blueSize = 30
+pygame.draw.rect(screen,"blue",(blueX,blueY,blueSize,blueSize))
+pygame.display.flip()
 
 
 
-
-
-
-    
 pygame.time.wait(1000)
 
-#rect(window, 'blue',[(x,y),])
+#input("Please choose either the red or blue box to select which player will win the game of darts.")
+pygame.event.get()
+print (pygame.mouse.get_pos()[0], pygame.mouse.get_pos()[1])
+
+distance_from_redBox = math.hypot(redX-pygame.mouse.get_pos()[0], redY- pygame.mouse.get_pos()[1]) #the distance formula
+if distance_from_redBox <= (redSize):
+    print("You chooe: red box")
+
+distance_from_blueBox = math.hypot(blueX-pygame.mouse.get_pos()[0], blueY- pygame.mouse.get_pos()[1]) #the distance formula
+if distance_from_blueBox <= (blueSize):
+    print("You chose: blue box")
+
+pygame.time.wait(1000)
 
