@@ -59,8 +59,8 @@ redY = 10
 redSize = 30
 pygame.draw.rect(screen,"red",(redX,redY,redSize,redSize))
 pygame.display.flip()
-blueX = 350
-blueY = 350
+blueX = 0
+blueY = 10
 blueSize = 30
 pygame.draw.rect(screen,"blue",(blueX,blueY,blueSize,blueSize))
 pygame.display.flip()
@@ -85,24 +85,30 @@ pygame.event.get()
 
 # a > redBox.x[0] & a < redBox.x[1] & b  
 
-teamChosen = 0 # 0 not chosen, 1 is player1, 2
+team = 0 # 0 not chosen, 1 is player1, 2
 
-while (teamChosen == 0):
+while (team == 0):
   for event in pygame.event.get():
     if event.type == pygame.MOUSEBUTTONUP:
       mouseX = pygame.mouse.get_pos()[0]
       mouseY = pygame.mouse.get_pos()[1]
+     # print(mouseX, mouseY)
      # if mouseX >= redX & mouseX < (redX + redSize) & mouseY < redY+redSize:
       #  teamChosen = 1
       #  break
      # if mouseX>= blueX & mouseX< (blueX + blueSize) & mouseY > blueY: 
       #  teamChosen = 2
       #  break
-      if mouseX >= 350 & mouseX< 380 & mouseY<50 &mouseY>10:
-        teamChosen = 4
+      if mouseX > 350:
+        team = 1
         break
+      if mouseX < 40:
         
-print(teamChosen)
+        team = 2
+       
+        break
+
+#print(team)
 
 
 
@@ -112,7 +118,7 @@ blueScore = 0
 for _ in range(n):
   valueX = random.randrange(0, screen_width, 1)
   valueY = random.randrange(0, screen_height, 1)
-  pygame.draw.circle(screen,'red',(valueX,valueY), 7)
+  pygame.draw.circle(screen,(255,139,139),(valueX,valueY), 7)
   pygame.display.flip()
   distance_from_center = math.hypot(x/2-valueX, y/2-valueY) #the distance formula
   if distance_from_center <= ((screen_width)/2):
@@ -122,7 +128,7 @@ for _ in range(n):
   pygame.time.wait(1000)
   valueX = random.randrange(0, screen_width, 1)
   valueY = random.randrange(0, screen_height, 1)
-  pygame.draw.circle(screen,'blue',(valueX,valueY), 7)
+  pygame.draw.circle(screen,(0,247,255),(valueX,valueY), 7)
   pygame.display.flip()
   distance_from_center = math.hypot(x/2-valueX, y/2-valueY) #the distance formula
   if distance_from_center <= ((screen_width)/2):
@@ -138,5 +144,16 @@ if redScore>blueScore:
   print("Red wins!")
 if redScore==blueScore: 
   print("Tie!")
+
+if (redScore>blueScore) & (team == 1): 
+  print("you guessed right!")
+if (blueScore>redScore) &(team == 2): 
+  print("you guessed right!")
+
+if (redScore>blueScore) & (team == 2): 
+  print("you guessed wrong.")
+if (blueScore>redScore) &(team == 1): 
+  print("you guessed wrong.")
+  
 pygame.time.wait(1000)
 pygame.time.wait(1000)
