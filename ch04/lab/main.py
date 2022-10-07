@@ -92,13 +92,16 @@ while (teamChosen == 0):
     if event.type == pygame.MOUSEBUTTONUP:
       mouseX = pygame.mouse.get_pos()[0]
       mouseY = pygame.mouse.get_pos()[1]
-      if mouseX >= redX & mouseX < (redX + redSize) & mouseY < redY+redSize:
-        teamChosen = 1
+     # if mouseX >= redX & mouseX < (redX + redSize) & mouseY < redY+redSize:
+      #  teamChosen = 1
+      #  break
+     # if mouseX>= blueX & mouseX< (blueX + blueSize) & mouseY > blueY: 
+      #  teamChosen = 2
+      #  break
+      if mouseX >= 350 & mouseX< 380 & mouseY<50 &mouseY>10:
+        teamChosen = 4
         break
-      if mouseX>= blueX & mouseX< (blueX + blueSize) & mouseY > blueY: 
-        teamChosen = 2
-        break
-
+        
 print(teamChosen)
 
 
