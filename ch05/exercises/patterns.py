@@ -4,17 +4,16 @@
 print ("How many stars?")
 numberStars = int(input())
 statement = "*"
+y = 1
+n = numberStars
+for _ in range(n):
+  print(statement*y)
+  y = y + 1
 
+print ("How many stars (backwards)?")
+numberStars = int(input())
+statement = "*"
 n = numberStars
 for _ in range(n):
   print(statement*numberStars)
-  print(statement*numberStars-1)
-  
-
-#print(statement*numberStars)
-#print(statement*(numberStars-1))
-#print(statement*(numberStars-2))
-#print(statement*(numberStars-3))
-#print(statement*(numberStars-4))
-#print(statement*(numberStars-5))
-#print(statement*(numberStars-6))
+  numberStars = numberStars - 1
