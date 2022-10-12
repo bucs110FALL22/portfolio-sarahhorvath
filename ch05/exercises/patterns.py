@@ -17,3 +17,16 @@ n = numberStars
 for _ in range(n):
   print(statement*numberStars)
   numberStars = numberStars - 1
+
+def pyramid(): 
+  levels = int(input("How many stars"))
+  for i in range (1, levels +1)
+    print("*" *i)
+
+def pyramidb():
+  levels = int(input("How many stars "))
+  for i in range (levels, 0, -1)
+    print("*"*1)
+
+pyramid()
+pyramidb()

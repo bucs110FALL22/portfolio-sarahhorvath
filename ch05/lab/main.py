@@ -22,3 +22,5 @@ while n != 1:
 
 print(n)
 print(count)
+
+#he wrote 42 lines of code
