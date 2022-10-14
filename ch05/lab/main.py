@@ -6,11 +6,17 @@
 
 #def expression(n):
 upper_limit = 20
-iters = {}
+iters = []
 
 count = 0
 n = 101
-while n != 1:
+
+print(n)
+print(count)
+
+numbers = range (2, upper_limit)
+for number in numbers:
+  while n != 1:
     if n % 2 == 0:
       n = n // 2
       print(n)
@@ -19,8 +25,10 @@ while n != 1:
       n = 3*n + 1
       print(n)
       count = count +1
+  iters.append(n)
+  iters.append(":")
+  iters.append(count)
 
-print(n)
-print(count)
 
+  print(iters)
 #he wrote 42 lines of code
