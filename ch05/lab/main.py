@@ -18,10 +18,7 @@ pygame.display.flip()
 upper_limit = 101
 iters = {}
 
-#n = 101
 
-#print(n)
-#print(count)
 def threenp1(n):
   count = 0
   while n != 1:
@@ -41,10 +38,10 @@ for n in range (2, upper_limit+1):
   iters[n*5]=threenp1(n)*5
   result = threenp1(n)*5
   
-  print(max_so_far)
+  #print(max_so_far)
   items = list(iters.items())
   
-  print(items)
+  #print(items)
   #print(iters.items())
   if len(items) > 1:
     val = pygame.draw.lines(display, "blue", False, items)
