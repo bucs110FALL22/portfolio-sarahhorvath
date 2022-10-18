@@ -18,15 +18,15 @@ def main():
   print(result)
 
 main()
-# def is_passing(letter): 
-#   if (letter == "A"):
-#     return True
-#   elif (letter == "B"):
-#     return True  
-#   elif (letter == "C"):
-#     return True  
-#   elif (letter == "D"):
-#     return False  
-#   elif (letter == "F"):
-#     return False  
+def is_passing(letter): 
+  if (letter == "A"):
+    return True
+  elif (letter == "B"):
+    return True  
+  elif (letter == "C"):
+    return True  
+  elif (letter == "D"):
+    return False  
+  elif (letter == "F"):
+    return False  
 
