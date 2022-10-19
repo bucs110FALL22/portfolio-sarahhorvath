@@ -1,32 +1,27 @@
 
-score = 100
-def percentage_to_letter(score):
-  if(score >= 90):
-    return "A"
-  elif(80 < score < 90):
-    return "B"
-  elif(70 < score < 80):
-    return "C"
-  elif(60 < score < 70):
-    return "D"
-  elif(score < 60):
-    return "F"
+def getGrade(percentage):
+    letter = 'F'
+    if percentage >= 90:
+        letter = 'A'
+    elif percentage >= 80:
+        letter = 'B'
+    elif percentage >= 70:
+        letter = 'C'
+    elif percentage >= 60:
+        letter = 'D'
+    return letter
 
 
-def main():
-  result = percentage_to_letter(85);
-  print(result)
+def isPassing(letter):
+    if letter == 'A': 
+        return True
+    elif letter == 'B':
+        return True
+    elif letter == 'C':
+        return True
+    return False
 
-main()
-def is_passing(letter): 
-  if (letter == "A"):
-    return True
-  elif (letter == "B"):
-    return True  
-  elif (letter == "C"):
-    return True  
-  elif (letter == "D"):
-    return False  
-  elif (letter == "F"):
-    return False  
-
+print(isPassing(getGrade(85)))
+print(isPassing(getGrade(65)))
+print(isPassing(getGrade(110)))
+print(isPassing(getGrade(-1)))
