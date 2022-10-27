@@ -11,21 +11,30 @@ myTurtle.shape("turtle")
 window = turtle.Screen ()
 turtle.setup(300,300)
 
-def setup():
-  
-  coordinates = x = (-100, -300)
-  y = (-100, 300)
-
-  myTurtle.penup()
-  myTurtle.goto(x)
-  myTurtle.pendown()
-  myTurtle.goto(y)
+coordinates = [(-100, -300), (-100, 300), (-150,-300), (-150,0)]
+x=0
+for i in coordinates: 
   myTurtle.hideturtle()
+  myTurtle.penup()
+  myTurtle.goto(coordinates[x])
+  x = x + 1
+  myTurtle.pendown()
+  myTurtle.goto(coordinates[x])
+  
+
+#def setup():
+
+  # make list with coordinates 
+#  coordinates 
+ # x = (-100, -300)
+ # y = (-100, 300)
+
+
 
 
 #myTurtle.goto(0,0)
-myTurtle.speed(0)
-setup()
+#myTurtle.speed(0)
+#setup()
 def foo(a, b, c, d):  
     print(a,b,c,d)
 
