@@ -27,15 +27,10 @@ def set_up():
       x = x+2
       y = y+2
       xCoordinate = xCoordinate +20
-      def foo(xCoordinate, screenSize, xCoordinate, screenSize):  
-        print("Choose one:",xCoordinate, -screenSize, xCoordinate, screenSize)
+      coordinates.extend([xCoordinate, -screenSize, xCoordinate, screenSize])
 
-      #coordinates.append(xCoordinate)
-      #coordinates.append(-screenSize)
-      #coordinates.append(xCoordinate)
-      #coordinates.append(screenSize)
-      #if xCoordinate>screenSize/2:
-       # return
+      if xCoordinate>screenSize/2:
+        return
 
       print(coordinates)
 
@@ -43,5 +38,10 @@ def set_up():
         return
       
 set_up()
+
+def coloring(color): 
+  window.bgcolor(color)
+
+coloring("blue")
 window.exitonclick()
 
