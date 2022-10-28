@@ -11,10 +11,10 @@ screenSize = 300
 turtle.setup(screenSize,screenSize)
 myTurtle.hideturtle()
 
-def set_up():
+def main():
     xCoordinate = -150
-    yCoordinate = 0
-    coordinates = [xCoordinate, -screenSize, xCoordinate, screenSize, -screenSize/2, yCoordinate, screenSize/2, yCoordinate]
+    coordinates = [xCoordinate, -screenSize, xCoordinate, screenSize]
+                   #, -screenSize/2, yCoordinate, screenSize/2, yCoordinate]
     x=0
     for i in coordinates: 
       myTurtle.penup()
@@ -28,20 +28,22 @@ def set_up():
       y = y+2
       xCoordinate = xCoordinate +20
       coordinates.extend([xCoordinate, -screenSize, xCoordinate, screenSize])
-
       if xCoordinate>screenSize/2:
         return
-
-      print(coordinates)
-
       if x+1 > len(coordinates):
         return
       
-set_up()
+main()
 
-def coloring(color): 
-  window.bgcolor(color)
+def coloring(bgcolor,fillcolor): 
+  window.bgcolor(bgcolor)
+  turtle.fillcolor(fillcolor)
+coloring("light blue", "green")
 
-coloring("blue")
+def writing(message):
+  turtle.write(message, move=False, align='left', font=('Arial', 8, 'normal'))
+writing("This is my lined paper!")
+
+
 window.exitonclick()
 
