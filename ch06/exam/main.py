@@ -1,6 +1,3 @@
-#mood during the day 
-#if below a certain level - color changes from red to green depending on where you are in the grpah 
-
 import turtle 
 #import random
 myTurtle = turtle.Turtle()
