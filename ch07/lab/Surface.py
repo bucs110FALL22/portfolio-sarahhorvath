@@ -7,4 +7,5 @@ class Surface:
     self.image = filename 
     
   def getRect(self):
+    
     return self.rect
