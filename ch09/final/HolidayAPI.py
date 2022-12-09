@@ -8,13 +8,36 @@ class HolidayAPI:
         response = requests.get(self.url)
         data = response.text
         parse_json = json.loads(data)
-        names = parse_json['holidays'][0]['name']
-        print(len(parse_json['holidays']))
-        
-        print(names)
+        #names = parse_json['holidays'][20]['name']
+        holidaysLength = int(len(parse_json['holidays']))
+        i = 0  
+        while i < holidaysLength:
+          #print(c)
+          names = parse_json['holidays'][i]['name']
+          #info = parse_json['holidays'][i]['date']
+          #print
+          print(names)
+          i = i +1
+         # for n in enumerate(names):
+          #  print(f"{n}){names}")
+         # for c, a in enumerate(names):
+        #    print(f"{c}){names}")
         #names2 = parse_json(['holidays']['name'])
         #print(names['name'])
-      
+
+        j = int(input("Enter number: "))
+        i = 0  
+        while i < holidaysLength:
+          if (i == j):
+            print(parse_json['holidays'][i]['name'])
+            
+             #info = parse_json['holidays'][i]['date']
+            #print(info)
+            date = parse_json['holidays'][i]['date']
+            return date
+            break;
+          i = i+1
+        print(date)
     def get(self):
         r = requests.get(self.url)
       
