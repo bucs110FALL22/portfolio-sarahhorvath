@@ -5,42 +5,43 @@ class HolidayAPI:
 
     def __init__(self, country='US', year=2021):
         self.url = f'https://holidayapi.com/v1/holidays?pretty&key=87dfcd0a-8a1a-49a3-b38d-4ef7b4bfe99a&country={country}&year={year}'
+        
+    def get(self):
+        r = requests.get(self.url)
         response = requests.get(self.url)
         data = response.text
         parse_json = json.loads(data)
-        #names = parse_json['holidays'][20]['name']
         holidaysLength = int(len(parse_json['holidays']))
-        i = 0  
+        i = 1  
         while i < holidaysLength:
-          #print(c)
           names = parse_json['holidays'][i]['name']
-          #info = parse_json['holidays'][i]['date']
-          #print
-          print(names)
+          print(f"{i}){names}")
           i = i +1
-         # for n in enumerate(names):
-          #  print(f"{n}){names}")
-         # for c, a in enumerate(names):
-        #    print(f"{c}){names}")
-        #names2 = parse_json(['holidays']['name'])
-        #print(names['name'])
-
         j = int(input("Enter number: "))
         i = 0  
         while i < holidaysLength:
           if (i == j):
             print(parse_json['holidays'][i]['name'])
-            
-             #info = parse_json['holidays'][i]['date']
-            #print(info)
             date = parse_json['holidays'][i]['date']
-            return date
+            print(date)
+            #return date
             break;
           i = i+1
-        print(date)
-    def get(self):
-        r = requests.get(self.url)
+        
+        february = '02'
+        january = '01'
+        march = '03'
+        monthes = [january, february, march]
       
+        for month in monthes:
+          i = 1
+          #print(month)
+          while i < 31:
+            if date == f"2021-{month}-{i}" or date == f"2021-{month}-0{i}":
+              print(f"Your favorite month is the {month} of the year.")
+
+              break
+            i = i +1
         #response is just a json dictonary of values after .json() call
        # holidays = r.json()
         #check to make sure I got a question, i.e. results
