@@ -7,26 +7,33 @@ class HolidayAPI:
         self.url = f'https://holidayapi.com/v1/holidays?pretty&key=87dfcd0a-8a1a-49a3-b38d-4ef7b4bfe99a&country={country}&year={year}'
         
     def get(self):
-        r = requests.get(self.url)
+        requests.get(self.url)
         response = requests.get(self.url)
         data = response.text
         parse_json = json.loads(data)
         holidaysLength = int(len(parse_json['holidays']))
-        i = 1  
-        while i < holidaysLength:
-          names = parse_json['holidays'][i]['name']
-          print(f"{i}){names}")
-          i = i +1
-        j = int(input("Enter number: "))
-        i = 0  
-        while i < holidaysLength:
-          if (i == j):
-            print(parse_json['holidays'][i]['name'])
-            date = parse_json['holidays'][i]['date']
-            print(date)
+        holidayNumber = 1  
+        self.dayOfMonth = 0
+        while holidayNumber < holidaysLength:
+          names = parse_json['holidays'][holidayNumber]['name']
+          print(f"{holidayNumber}){names}")
+          holidayNumber = holidayNumber +1
+        userHolidayChoice = int(input("Enter the number of your favorite holiday: "))
+        holidayNumber = 0  
+        
+        while holidayNumber < holidaysLength:
+          if (holidayNumber == userHolidayChoice):
+            print(parse_json['holidays'][holidayNumber]['name'])
+            date = parse_json['holidays'][holidayNumber]['date']
+            print(f'The date of your favorite holiday in 2021 is {date}.')
+           # date1 = parse_json['holidays'][holidayNumber]['date'][5]
+            #date2 = parse_json['holidays'][holidayNumber]['date'][6]
+            #self.dayOfMonth = f'{date1}{date2}'
+            #print(self.dayOfMonth)
             #return date
+            #return self.dayOfMonth
             break;
-          i = i+1
+          holidayNumber = holidayNumber+1
         
         february = '02'
         january = '01'
@@ -34,14 +41,16 @@ class HolidayAPI:
         monthes = [january, february, march]
       
         for month in monthes:
-          i = 1
+          day = 1
           #print(month)
-          while i < 31:
-            if date == f"2021-{month}-{i}" or date == f"2021-{month}-0{i}":
+          while day < 31:
+            if date == f"2021-{month}-{day}" or date == f"2021-{month}-0{day}":
               print(f"Your favorite month is the {month} of the year.")
-
+              print(month, day)
               break
-            i = i +1
+            day = day +1
+        return self.dayOfMonth
+
         #response is just a json dictonary of values after .json() call
        # holidays = r.json()
         #check to make sure I got a question, i.e. results
