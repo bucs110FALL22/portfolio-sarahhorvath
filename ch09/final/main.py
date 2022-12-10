@@ -3,10 +3,11 @@ import NumbersAPI
 
 def main():
     #Proxy Class
-    hapi = HolidayAPI.HolidayAPI(year=2021)
-    data = hapi.get()
+    hapi = HolidayAPI.HolidayAPI(country='US', year=2021)
+    hapi.get()
+  
     napi = NumbersAPI.NumbersAPI(month='01', day='02')
-    data2 = napi.get()
+    napi.get()
 
     #print(data)
 
