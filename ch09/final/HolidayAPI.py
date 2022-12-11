@@ -4,6 +4,7 @@ import json
 class HolidayAPI:
 
     def __init__(self, country, year):
+        '''loads the url for the holiday API'''
         self.url = f'https://holidayapi.com/v1/holidays?pretty&key=87dfcd0a-8a1a-49a3-b38d-4ef7b4bfe99a&country={country}&year={year}'
 
     def get(self):
