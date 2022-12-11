@@ -30,10 +30,11 @@ class HolidayAPI:
             print(parse_json['holidays'][holidayNumber]['name'])
             date = parse_json['holidays'][holidayNumber]['date']
             print(f'The date of your favorite holiday in 2021 is {date}.')
-            date1 = parse_json['holidays'][holidayNumber]['date'][5]
-            date2 = parse_json['holidays'][holidayNumber]['date'][6]
-            self.dayOfMonth = f'{date1}{date2}'
-            print(self.dayOfMonth)
+            my_month = parse_json['holidays'][holidayNumber]['date'][5:7]
+            my_day = parse_json['holidays'][holidayNumber]['date'][8:10]
+            # date2 = parse_json['holidays'][holidayNumber]['date'][6]
+            # self.dayOfMonth = f'{date1}{date2}'
+            # print(self.dayOfMonth)
             break;
           
           holidayNumber = holidayNumber+1
@@ -63,6 +64,7 @@ class HolidayAPI:
               #return month
               break
             day = day +1
+        return (my_month, my_day)
         #return self.dayOfMonth
         #return self.dayOfMonth
 

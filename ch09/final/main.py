@@ -4,9 +4,9 @@ import NumbersAPI
 def main():
     #Proxy Class
     hapi = HolidayAPI.HolidayAPI(country='US', year=2021)
-    hapi.get()
+    (month, day) = hapi.get()
   
-    napi = NumbersAPI.NumbersAPI(month='01', day='02')
+    napi = NumbersAPI.NumbersAPI(month, day)
     napi.get()
 
     #print(data)
