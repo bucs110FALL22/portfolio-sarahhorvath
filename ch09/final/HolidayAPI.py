@@ -27,9 +27,7 @@ class HolidayAPI:
         '''This function determines the month and the day of the month the holiday takes place and returns the information'''
         while self.holidayNumber < self.holidaysLength:
           if (self.holidayNumber == self.userHolidayChoice):
-           # print(f"Your favorite holiday is {self.parse_json['holidays'][self.holidayNumber]['name']}.")
             self.date = self.parse_json['holidays'][self.holidayNumber]['date']
-            #print(f'The date of your favorite holiday in 2021 is {self.date}.')
             self.my_month = self.parse_json['holidays'][self.holidayNumber]['date'][5:7]
             self.my_day = self.parse_json['holidays'][self.holidayNumber]['date'][8:10]
             break;
