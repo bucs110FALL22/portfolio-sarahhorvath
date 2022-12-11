@@ -7,8 +7,11 @@ class NumbersAPI:
         self.url = f'http://numbersapi.com/{month}/{day}/date'
         
     def get(self):
-        '''loads and prints the data from the Numbers API (which is a fun fact about the day of the holiday the user chose)'''
-        #r = requests.get(self.url)
+        '''loads the data from the Numbers API (which is a fun fact about the day of the holiday the user chose)'''
         response = requests.get(self.url)
-        factOfDay = response.text
-        print(f"Here's a fun fact about that day: {factOfDay}")
+        self.factOfDay = response.text
+        
+    def __str__(self):
+      '''returns the string of the fun fact'''
+      information_str = f"Here's a fun fact about that day: {self.factOfDay}"
+      return information_str
